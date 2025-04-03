@@ -1,0 +1,23 @@
+{
+  "employeeLists": "Employee List",
+  "addEmployeeDetails": "Add Employee Details",
+  "editEmployeeDetails": "Edit Employee Details",
+  "error_msg_on_form": "Please fill all required fields.",
+  "save": "Save",
+  "cancel": "Cancel",
+  "currentEmployees": "Current employees",
+  "previousEmployees": "Previous employees",
+  "selectRole": "Select a role",
+  "employeeName": "Employee name",
+  "employeeDeleted": "Employee data has been deleted",
+  "today": "Today",
+  "noDate": "No date",
+  "undo": "UNDO",
+  "msg_start_date": "Start date cannot be after then end date.",
+  "msg_end_date": "End date cannot be before then start date.",
+
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  }
+
+}
