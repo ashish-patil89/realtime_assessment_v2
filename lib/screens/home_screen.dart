@@ -93,8 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     if (currentEmployees.isNotEmpty)
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: MediaQuery.of(context).size.height * 0.02,
-                          horizontal: MediaQuery.of(context).size.width * 0.04,
+                          vertical: 16,
+                          horizontal: 16,
                         ),
                         child: Text(
                           context.l10n.currentEmployees,
@@ -139,8 +139,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     if (previousEmployees.isNotEmpty)
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: MediaQuery.of(context).size.height * 0.02,
-                          horizontal: MediaQuery.of(context).size.width * 0.04,
+                          vertical: 16,
+                          horizontal: 16,
                         ),
                         child: Text(
                           context.l10n.previousEmployees,
@@ -177,8 +177,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 : Center(
                   child: SvgPicture.asset(
                     'assets/images/no_records.svg',
-                    width: MediaQuery.of(context).size.width * 0.25,
-                    height: MediaQuery.of(context).size.height * 0.25,
+                    width: 261,
+                    height: 244,
                   ),
                 ),
       ),
