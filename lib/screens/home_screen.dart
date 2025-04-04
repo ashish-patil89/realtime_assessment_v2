@@ -31,9 +31,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     List<Employee> currentEmployees =
-        employees.where((e) => e.endDate == null).toList();
+        employees
+            .where(
+              (e) => e.endDate == null || e.endDate!.isAfter(DateTime.now()),
+            )
+            .toList();
     List<Employee> previousEmployees =
-        employees.where((e) => e.endDate != null).toList();
+        employees
+            .where(
+              (e) => e.endDate != null && e.endDate!.isBefore(DateTime.now()),
+            )
+            .toList();
 
     return BlocListener<EmployeeCubit, EmployeeState>(
       listener: (context, state) {
@@ -182,6 +190,6 @@ class _HomeScreenState extends State<HomeScreen> {
     Employee employee,
     bool isCurrent,
   ) {
-    return EmployeeListItem(employee: employee);
+    return EmployeeListItem(employee: employee, isCurrent: isCurrent);
   }
 }

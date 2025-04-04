@@ -8,8 +8,14 @@ import 'package:realtime_assessment_v2/utils/constants.dart';
 import '../utils/app_fonts.dart';
 
 class EmployeeListItem extends StatelessWidget {
-  const EmployeeListItem({super.key, required this.employee});
+  const EmployeeListItem({
+    super.key,
+    required this.employee,
+    required this.isCurrent,
+  });
   final Employee employee;
+
+  final bool isCurrent;
 
   @override
   Widget build(BuildContext context) {
@@ -56,23 +62,25 @@ class EmployeeListItem extends StatelessWidget {
                                 color: AppColors.color7,
                               ),
                             ),
-                            employee.endDate?.toLocal() == null
-                                ? Container()
-                                : Text(
-                                  ' - ',
-                                  style: TextStyle(color: AppColors.color7),
-                                ),
+                            if (!isCurrent) ...[
+                              employee.endDate?.toLocal() == null
+                                  ? Container()
+                                  : Text(
+                                    ' - ',
+                                    style: TextStyle(color: AppColors.color7),
+                                  ),
 
-                            employee.endDate?.toLocal() == null
-                                ? Container()
-                                : Text(
-                                  formatDate(
-                                    employee.endDate?.toLocal().toString(),
+                              employee.endDate?.toLocal() == null
+                                  ? Container()
+                                  : Text(
+                                    formatDate(
+                                      employee.endDate?.toLocal().toString(),
+                                    ),
+                                    style: AppTextStyles.text12Regular.copyWith(
+                                      color: AppColors.color7,
+                                    ),
                                   ),
-                                  style: AppTextStyles.text12Regular.copyWith(
-                                    color: AppColors.color7,
-                                  ),
-                                ),
+                            ],
                           ],
                         ),
                       ],
