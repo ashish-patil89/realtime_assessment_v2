@@ -32,6 +32,7 @@ class AppBaseScaffold extends StatelessWidget {
         backgroundColor: AppColors.appBlueColor,
         title: Text(
           title ?? '',
+          textAlign: TextAlign.left,
           style: AppTextStyles.fontA12.copyWith(color: AppColors.appWhiteColor),
         ),
         actions: actions,

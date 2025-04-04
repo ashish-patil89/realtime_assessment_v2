@@ -268,7 +268,7 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
                         selectedDate,
                       ) {
                         if (selectedDate != null &&
-                            selectedDate.isBefore(DateTime.now())) {
+                            selectedDate.isBefore(_startDate!)) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text(context.l10n.msg_end_date)),
                           );
