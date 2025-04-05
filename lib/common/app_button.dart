@@ -26,6 +26,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       style: FilledButton.styleFrom(
+        padding: EdgeInsets.zero,
         fixedSize: fixedSize,
         backgroundColor: backgroundColor, // Change button color
         shape: RoundedRectangleBorder(
