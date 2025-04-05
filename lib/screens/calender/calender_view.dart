@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -29,6 +30,10 @@ class CalendarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.height * 0.7,
+      height:
+          MediaQuery.of(context).size.height *
+          (kIsWeb ? 0.85 : 0.7), // To maintain width and height check platform
       decoration: BoxDecoration(
         color: AppColors.appBgWhiteColor,
         borderRadius: BorderRadius.circular(16), // <-- Rounded corners
@@ -96,7 +101,7 @@ class CalendarView extends StatelessWidget {
               ],
             ),
             SizedBox(height: 24),
-            CalendarWidget(isStartDate),
+            Expanded(child: CalendarWidget(isStartDate)),
             SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
