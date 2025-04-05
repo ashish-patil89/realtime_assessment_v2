@@ -8,6 +8,7 @@ import 'package:realtime_assessment_v2/l10n/l10n.dart';
 import 'package:realtime_assessment_v2/models/models.dart';
 import 'package:realtime_assessment_v2/utils/utils.dart';
 
+import 'calender/calender_view.dart';
 import 'cubit/employee_cubit.dart';
 import 'screens.dart';
 
@@ -79,7 +80,7 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
                   ),
                   decoration: InputDecoration(
                     floatingLabelBehavior: FloatingLabelBehavior.never,
-                    hintText: "Enter text",
+                    hintText: context.l10n.employeeName,
                     hintStyle: AppTextStyles.fontD8.copyWith(
                       color: AppColors.color7,
                     ),
@@ -234,7 +235,7 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: _datePicker(context.l10n.today, _startDate, (
+                      child: _datePicker(true, context.l10n.today, _startDate, (
                         selectedDate,
                       ) {
                         if (selectedDate != null &&
@@ -264,7 +265,7 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
                     ),
 
                     Expanded(
-                      child: _datePicker(context.l10n.noDate, _endDate, (
+                      child: _datePicker(false, context.l10n.noDate, _endDate, (
                         selectedDate,
                       ) {
                         if (selectedDate != null &&
@@ -336,6 +337,7 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
   }
 
   Widget _datePicker(
+    bool isStartDate,
     String label,
     DateTime? selectedDate,
     Function(DateTime?) onSelect, {
@@ -345,32 +347,13 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
       width: width, // Set the width dynamically
       child: GestureDetector(
         onTap: () async {
-          final date = await showDatePicker(
+          final selectedDate = await showDialog(
             context: context,
-            initialDate: selectedDate ?? DateTime.now(),
-            firstDate: DateTime(2000),
-            lastDate: DateTime(2100),
-            builder: (context, child) {
-              return Theme(
-                data: ThemeData(
-                  primaryColor: Colors.blue, // Header color
-                  colorScheme: ColorScheme.light(
-                    primary: Colors.blue, // Header color
-                    onPrimary: Colors.white, // Header text color
-                    onSurface: AppColors.color8, // Date text color
-                  ),
-                  textButtonTheme: TextButtonThemeData(
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.blue, // Button text color
-                    ),
-                  ),
-                  dialogTheme: DialogThemeData(backgroundColor: Colors.red),
-                ),
-                child: child!,
-              );
+            builder: (context) {
+              return CustomCalendarDialog(isStartDate);
             },
           );
-          onSelect(date);
+          onSelect(selectedDate);
         },
         child: AbsorbPointer(
           child: TextField(

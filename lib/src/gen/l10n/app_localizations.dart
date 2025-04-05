@@ -144,7 +144,7 @@ abstract class AppLocalizations {
   /// No description provided for @selectRole.
   ///
   /// In en, this message translates to:
-  /// **'Select a role'**
+  /// **'Select role'**
   String get selectRole;
 
   /// No description provided for @employeeName.

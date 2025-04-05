@@ -35,7 +35,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get previousEmployees => 'Previous employees';
 
   @override
-  String get selectRole => 'Select a role';
+  String get selectRole => 'Select role';
 
   @override
   String get employeeName => 'Employee name';

@@ -9,6 +9,7 @@ class AppButton extends StatelessWidget {
     required this.backgroundColor,
     required this.textColor,
     required this.onPressed,
+    this.fixedSize,
   });
 
   final String title;
@@ -19,10 +20,13 @@ class AppButton extends StatelessWidget {
 
   final Color textColor;
 
+  final Size? fixedSize;
+
   @override
   Widget build(BuildContext context) {
     return FilledButton(
       style: FilledButton.styleFrom(
+        fixedSize: fixedSize,
         backgroundColor: backgroundColor, // Change button color
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(6), // Change corner radius

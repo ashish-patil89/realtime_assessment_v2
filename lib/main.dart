@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:realtime_assessment_v2/screens/calender/calender_cubit.dart';
 import 'package:realtime_assessment_v2/screens/screens.dart';
 import 'package:realtime_assessment_v2/src/gen/l10n/app_localizations.dart';
 
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => EmployeeCubit())],
+      providers: [
+        BlocProvider(create: (context) => EmployeeCubit()),
+        BlocProvider(create: (_) => CalendarCubit()),
+      ],
       child: MaterialApp(
         title: 'Employee Manager',
         theme: ThemeData(primarySwatch: Colors.blue),

@@ -10,6 +10,8 @@ abstract class AppColors {
   static const Color transparentColorBanner = Color(0x15000000);
   static const Color disableButtonColor = Color(0xffEDF8FF);
   static const Color disableButtonTextColor = Color(0xff1DA1F2);
+  static const Color calenderButtonColor = Color(0xffEDF8FF);
+  static const Color calenderButtonTextColor = Color(0xff1DA1F2);
 
   static const Color color1 = Color(0xff1DA1F2);
   static const Color color7 = Color(0xff949C9E);
