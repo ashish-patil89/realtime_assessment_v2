@@ -13,6 +13,9 @@
   "today": "Today",
   "noDate": "No date",
   "undo": "UNDO",
+  "nextMonday": "Next Monday",
+  "nextTuesday": "Next Tuesday",
+  "after1Week": "After 1 Week",
   "msg_start_date": "Start date cannot be after then end date.",
   "msg_end_date": "End date cannot be before then start date.",
 

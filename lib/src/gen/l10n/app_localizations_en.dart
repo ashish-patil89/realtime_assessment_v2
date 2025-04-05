@@ -53,6 +53,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get undo => 'UNDO';
 
   @override
+  String get nextMonday => 'Next Monday';
+
+  @override
+  String get nextTuesday => 'Next Tuesday';
+
+  @override
+  String get after1Week => 'After 1 Week';
+
+  @override
   String get msg_start_date => 'Start date cannot be after then end date.';
 
   @override

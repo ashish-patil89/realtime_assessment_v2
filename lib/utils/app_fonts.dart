@@ -122,7 +122,7 @@ class AppTextStyles {
     textBaseline: TextBaseline.alphabetic,
     decoration: TextDecoration.none,
     fontWeight: AppFontWeights.medium,
-    fontSize: 18,
+    fontSize: 14,
     //height: 42 / 38,
     //letterSpacing: -0.4,
     //fontFeatures: _fontFeatures,

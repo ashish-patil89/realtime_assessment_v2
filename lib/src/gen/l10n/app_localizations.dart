@@ -177,6 +177,24 @@ abstract class AppLocalizations {
   /// **'UNDO'**
   String get undo;
 
+  /// No description provided for @nextMonday.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Monday'**
+  String get nextMonday;
+
+  /// No description provided for @nextTuesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Tuesday'**
+  String get nextTuesday;
+
+  /// No description provided for @after1Week.
+  ///
+  /// In en, this message translates to:
+  /// **'After 1 Week'**
+  String get after1Week;
+
   /// No description provided for @msg_start_date.
   ///
   /// In en, this message translates to:

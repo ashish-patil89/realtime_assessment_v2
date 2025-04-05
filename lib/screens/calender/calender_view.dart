@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
+import 'package:realtime_assessment_v2/l10n/l10n.dart';
 
 import '../../common/app_button.dart';
 import '../../utils/app_colors.dart';
@@ -40,25 +41,27 @@ class CalendarView extends StatelessWidget {
             Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AppButton(
-                      onPressed: () {
-                        context.read<CalendarCubit>().setToday();
-                      },
-                      title: 'Today',
-                      fixedSize: Size(174, 36),
-                      backgroundColor: AppColors.calenderButtonColor,
-                      textColor: AppColors.calenderButtonTextColor,
+                    Expanded(
+                      child: AppButton(
+                        onPressed: () {
+                          context.read<CalendarCubit>().setToday();
+                        },
+                        title: context.l10n.today,
+                        backgroundColor: AppColors.calenderButtonColor,
+                        textColor: AppColors.calenderButtonTextColor,
+                      ),
                     ),
-                    AppButton(
-                      onPressed: () {
-                        context.read<CalendarCubit>().setNextMonday();
-                      },
-                      title: 'Next Monday',
-                      fixedSize: Size(174, 36),
-                      backgroundColor: AppColors.appBlueColor,
-                      textColor: AppColors.appWhiteColor,
+                    Expanded(
+                      child: AppButton(
+                        onPressed: () {
+                          context.read<CalendarCubit>().setNextMonday();
+                        },
+                        title: context.l10n.nextMonday,
+                        backgroundColor: AppColors.appBlueColor,
+                        textColor: AppColors.appWhiteColor,
+                      ),
                     ),
                   ],
                 ),
@@ -66,23 +69,27 @@ class CalendarView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppButton(
-                      onPressed: () {
-                        context.read<CalendarCubit>().setNextTuesday();
-                      },
-                      title: 'Next Tuesday',
-                      fixedSize: Size(174, 36),
-                      backgroundColor: AppColors.calenderButtonColor,
-                      textColor: AppColors.calenderButtonTextColor,
+                    Expanded(
+                      child: AppButton(
+                        onPressed: () {
+                          context.read<CalendarCubit>().setNextTuesday();
+                        },
+                        title: context.l10n.nextTuesday,
+
+                        backgroundColor: AppColors.calenderButtonColor,
+                        textColor: AppColors.calenderButtonTextColor,
+                      ),
                     ),
-                    AppButton(
-                      onPressed: () {
-                        context.read<CalendarCubit>().incrementWeek();
-                      },
-                      title: 'After 1 week',
-                      fixedSize: Size(174, 36),
-                      backgroundColor: AppColors.calenderButtonColor,
-                      textColor: AppColors.calenderButtonTextColor,
+                    Expanded(
+                      child: AppButton(
+                        onPressed: () {
+                          context.read<CalendarCubit>().incrementWeek();
+                        },
+                        title: context.l10n.after1Week,
+
+                        backgroundColor: AppColors.calenderButtonColor,
+                        textColor: AppColors.calenderButtonTextColor,
+                      ),
                     ),
                   ],
                 ),
